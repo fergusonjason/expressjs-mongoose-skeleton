@@ -1,0 +1,8 @@
+{
+    "https":{
+        "allowLocalCerts": false
+    },
+    "mongoose":{
+        "mongoUrl": null
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "https":{
+        "allowLocalCerts": true
+    },
+    "mongoose":{
+        "mongoUrl":"mongodb://localhost/gsm"
+    }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "expressjs-skeleton2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "npm run build && NODE_ENV=dev node dist/index.js",
+    "test": "NODE_ENV=test mocha --compilers js:babel-core/register --exit"
+  },
+  "author": "Jason Ferguson",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "config": "^2.0.1",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "mongoose": "^5.2.9",
+    "morgan": "^1.9.0",
+    "node-config": "0.0.2",
+    "node-mocks-http": "^1.7.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "winston": "^3.0.0",
+    "winston-daily-rotate-file": "^3.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "eslint": "^5.4.0",
+    "eslint-config-google": "^0.9.1",
+    "mocha": "^5.2.0",
+    "rimraf": "^2.6.2",
+    "sinon": "^6.1.5",
+    "sinon-mongoose": "^2.2.1"
+  }
+}
