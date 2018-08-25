@@ -5,7 +5,7 @@ import bcrypt from "bcrypt-nodejs";
 
 let UserSchema = new Schema({
     // _id is automatically created
-    email: { type: String, required: true, unique: true, indexed: true, trim: true, lowercase: true, maxlength = 100 },
+    email: { type: String, required: true, unique: true, indexed: true, trim: true, lowercase: true, maxlength:100 },
     password: { type: String, required: true },
     isAdmin: {type: Boolean, default: false},
     created: {type: Date, default: Date.now, required: true},
@@ -18,7 +18,7 @@ UserSchema.pre("save", function(next) {
 
     // if the object is modified, update the updated field
     if (this.isModified()) {
-        user.updated = Date.now;
+        user.updated = Date.now();
     };
 
     // if the password is modified, rehash it before saving
