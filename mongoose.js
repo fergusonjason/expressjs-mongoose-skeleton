@@ -9,5 +9,7 @@ mongoose.connect(mongooseConfig.mongoUrl, (error) => {
 
     if (error) {
         log.info("Exiting. Mongo only pawn in game of life");
+    } else {
+        log.info("Connected to mongo");
     }
 });
