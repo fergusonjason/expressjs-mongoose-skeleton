@@ -5,6 +5,8 @@ import {log} from "./util/logger";
 // connect to mongo
 const mongooseConfig = config.get('mongoose');
 
+log.info(`MongoURL: ${mongooseConfig.mongoUrl}`);
+
 mongoose.connect(mongooseConfig.mongoUrl, (error) => {
 
     if (error) {

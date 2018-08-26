@@ -1,5 +1,4 @@
 
-import fs from "fs";
 import config from "config";
 import {log} from "./util/logger";
 
@@ -14,3 +13,10 @@ log.info(`REJECT SELF-SIGNED CERT: ${process.env.NODE_TLS_REJECT_UNAUTHORIZED}`)
 import "./mongoose";
 
 import server from "./server";
+
+process.on('SIGINT', () => {
+    log.warn('Caught SIGINT, closing server');
+    server.close(() => {
+        log.info('Shutting down server');
+    });
+});

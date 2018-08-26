@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "npm run build && NODE_ENV=dev node dist/index.js",
-    "test": "NODE_ENV=test mocha --compilers js:babel-core/register --exit"
+    "start": "npm run build && NODE_ENV=dev nodemon dist/index.js",
+    "test": "NODE_ENV=test mocha --compilers js:babel-core/register --exit components/**/*.spec.js"
   },
   "author": "Jason Ferguson",
   "license": "MIT",

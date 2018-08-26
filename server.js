@@ -11,17 +11,11 @@ let server = https.createServer({
 }, app);
 
 server.listen(3443, () => {
-    log.info("Listening on port 3443");
+    log.info("HTTPS server listening on port 3443");
+}).on('error', (err, socket) => {
+    log.error(`Error on startup, Code: ${err.code}`);
 });
 
-// const shutdown = () => {
-//     server.close(() => {
-//         log.info("Closing out server connections");
-//         process.exit(0);
-//     });
-// }
-
-// process.on('SIGTERM', shutdown);
-// process.on('SIGNINT', shutdown);
+// TODO: gracefully shut down the server on error!!!
 
 export default server;

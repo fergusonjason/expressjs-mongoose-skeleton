@@ -14,7 +14,10 @@ const log = createLogger({
         format.json()
     ),
     transports: [
-        new (winston.transports.Console)({level: "debug", colorize: true, timestamp: true, json: false}),
+        new (winston.transports.Console)({
+            level: "debug", 
+            colorize: true, 
+            timestamp: true, json: false}),
         new (dailyRotate)({
             dirname: loggingDir,
             filename: `application-%DATE%.log`,
