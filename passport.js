@@ -1,9 +1,12 @@
 import passport from 'passport';
 import passportLocal from 'passport-local';
 import passportJwt from 'passport-jwt';
+import config from 'config';
 
 import User from './components/user/User';
 import {log} from './util/logger';
+
+const secret = config.get('passport').secretKey;
 
 const LocalStrategy = passportLocal.Strategy;
 const JWTStrategy = passportJwt.Strategy;
@@ -31,7 +34,7 @@ passport.use('authenticate', new LocalStrategy({
 }));
 
 passport.use(new JWTStrategy({
-    secretOrKey: 'RedRobinYummm',
+    secretOrKey: secret,
     jwtFromRequest: ExtractJWT.fromHeader('auth')
 }, async (token, done) => {
     try {
