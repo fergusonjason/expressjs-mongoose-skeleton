@@ -4,5 +4,8 @@
     },
     "mongoose":{
         "mongoUrl":"mongodb://localhost/gsm"
+    },
+    "passport":{
+        "secretKey":"RedRobinYummm"
     }
 }
